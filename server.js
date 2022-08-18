@@ -6,6 +6,7 @@ const cors = require('cors');
 const express = require('express');
 const { getWeather } = require('./lib/weather.js')
 const { getMovies } = require('./lib/movies.js')
+const { getRestaurants } = require('./lib/restaurants.js')
 
 
 require('dotenv').config();
@@ -21,6 +22,7 @@ app.get('/', (req, res) => {
 
 app.get('/weather', getWeather);
 app.get('/movies', getMovies);
+app.get('/restaurants', getRestaurants);
 
 
 app.listen(PORT, () => {
